@@ -34,6 +34,15 @@ async function createEntry({userID, title, author, genre, rating}){
     }
 }
 
+async function getAllUsers() {
+    const { rows } = await client.query(
+        `SELECT id, username, name
+        FROM users;
+      `);
+    
+      return rows; 
+}
+
 
 
 
@@ -47,5 +56,6 @@ async function createEntry({userID, title, author, genre, rating}){
 module.exports = {
     client,
     createUser,
-    createEntry
+    createEntry,
+    getAllUsers
 }

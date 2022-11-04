@@ -1,4 +1,4 @@
-const { client, createUser, createEntry } = require('./index')
+const { client, createUser, createEntry, getAllUsers } = require('./index')
 
 
 async function createInitialUsers() {
@@ -54,7 +54,6 @@ async function createInitialEntries() {
 }
 
 
-// PLACEHOLDER SPACE FOR DROP TABLES FUNCTION
 
 async function dropTables() {
 
@@ -124,3 +123,26 @@ async function rebuildDatabase(){
     }
 
 }
+
+async function testDatabase() {
+
+    try {
+        console.log('STARTING TO TEST DATABASE');
+        console.log('CALLING GETALLUSERS');
+
+        const users = await(getAllUsers());
+        console.log("RESULT OF GETALLUSERS", users)
+        
+    } catch (error) {
+        
+    }
+}
+
+
+// PLACEHOLDER FOR OTHER TEST FUNCTIONS
+
+
+rebuildDatabase()
+.then(testDatabase)
+.catch(console.error)
+.finally(() => client.end());

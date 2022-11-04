@@ -30,7 +30,7 @@ async function createInitialEntries() {
 
         console.log('STARTING TO CREATE ENTRIES');
         await createEntry({
-            userId: kaylan.id,
+            userID: kaylan.id,
             title: "A Court of Mist and Fury",
             author: "Sarah J. Maas",
             genre: "Fantasy Romance",
@@ -38,7 +38,7 @@ async function createInitialEntries() {
         });
 
         await createEntry({
-            userId: allyson.id,
+            userID: allyson.id,
             title: "Alice in Wonderland",
             author: "Lewis Carroll",
             genre: "Fantasy",
